@@ -1,0 +1,15 @@
+// File: app/page.tsx (or pages/index.tsx if using pages directory)
+
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1>AE-iT.OPS Homepage</h1>
+      <p>Welcome to the AE-iT.OPS homepage.</p>
+      <Link href="/zippattern">
+        <a className="text-blue-600 underline">Go to ZipPattern page</a>
+      </Link>
+    </main>
+  );
+}
