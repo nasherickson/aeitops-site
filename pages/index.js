@@ -37,13 +37,13 @@ export default function Home() {
       </header>
 
       <main className="relative z-10 pt-[30rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {['zipPattern', 'Lamora', 'Parley'].map((project) => (
+        {['zipPattern', 'Llamora', 'Parley'].map((project) => (
           <Link href={`/${project.toLowerCase()}`} key={project}>
             <div className="p-4 rounded-lg transition text-center bg-transparent hover:scale-105 transform duration-300">
               <img
-                src={`/${project.toLowerCase()}.png`}
+                src={`/${project === 'Llamora' ? 'llamora' : project.toLowerCase()}.png`}
                 alt={`${project} preview`}
-                className="w-40 h-40 object-contain mx-auto rounded-xl shadow-lg"
+                className="object-contain mx-auto rounded-xl shadow-lg w-52 h-40"
               />
               <h2 className="text-2xl font-semibold mt-4">{project}</h2>
               <p className="text-sm text-gray-400">Click to explore more about {project}.</p>
@@ -80,25 +80,16 @@ export default function Home() {
       </section>
 
       <section className="relative z-10 mt-24 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">About Me</h2>
-        <p className="text-lg leading-relaxed">
-          I'm Archer Erickson — a developer, designer, and systems thinker with a builder's instinct and a hacker's curiosity. My work spans tools that merge usability with power, like <em>zipPattern</em> for digital sewing, <em>Lamora</em> for intuitive AI integration, and <em>Parley</em> for clean, effective communication systems.
-          <br /><br />
-          I thrive in chaos and complexity — distilling messy ideas into structured, actionable tools. I don’t just chase trends; I chase utility, clarity, and a bit of elegance in the mess. Whether it’s reverse engineering a tangled system, designing a UI that just makes sense, or solving a problem no one else wanted to touch — that’s my lane.
-          <br /><br />
-          I’m self-taught, constantly iterating, and hungry to collaborate on things that matter. If you’re looking for someone who brings grit, curiosity, and high standards — we should talk.
+        <h2 className="text-3xl font-bold mb-4">Who Am I</h2>
+        <p className="text-lg leading-relaxed mb-6">
+          Not what you want to hear — what you need to know. For the raw version of who I am and how I work, read this.
         </p>
-        <div className="mt-8 text-center">
-          <p className="text-lg">
-            Curious to collaborate? Want to talk shop or solve something unconventional together?
-          </p>
-          <a
-            href="mailto:nasherickson2710@gmail.com"
-            className="inline-block mt-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded transition"
-          >
-            Let’s Build Something Great
-          </a>
-        </div>
+        <Link
+          href="/whoami"
+          className="inline-block bg-red-600 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded transition"
+        >
+          Read the Manifesto
+        </Link>
       </section>
     </div>
   )
