@@ -3,19 +3,19 @@ import Image from 'next/image';
 
 export default function ZipPatternPage() {
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16 text-center">
+    <div className="relative min-h-screen bg-black text-white flex flex-col justify-start px-6 py-16 text-center">
       <div className="fixed inset-0 z-0 opacity-10 blur-sm grayscale brightness-50 pointer-events-none">
         <Image
           src="/zippattern.png"
           alt="zipPattern Logo Background"
           fill
-          style={{ objectFit: 'contain'}}  //or 'contasin', transform: 'scale(1)', transformOrigin: 'center' }}
+          style={{ objectFit: 'contain', width: '120%', height: 'auto', transform: 'translateX(-10%)' }}  //or 'contasin', transform: 'scale(1)', transformOrigin: 'center' }}
           priority
           
         />
       </div>
 
-      <div className="relative z-10 w-full lg:max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
+      <main className="relative z-10 w-full lg:max-w-7xl mx-auto px-6 flex flex-col items-center text-center min-h-screen py-40">
         <section className="relative w-full h-screen flex flex-col items-center justify-center text-white text-center mb-12">
           <Image
             src="/zippattern.png"
@@ -33,7 +33,7 @@ export default function ZipPatternPage() {
           </div>
         </section>
 
-        <section className="text-lg leading-relaxed">
+        <section className="text-lg leading-relaxed projects min-h-screen py-40">
           <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">Philosophy</h2>
             <p>
@@ -83,7 +83,7 @@ export default function ZipPatternPage() {
             </ul>
           </div>
         </section>
-      </div>
+      </main>
     </div>
   );
 }
