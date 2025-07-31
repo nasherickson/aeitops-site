@@ -3,31 +3,31 @@ import Image from 'next/image';
 
 export default function ZipPatternPage() {
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col justify-start px-6 py-16 text-center">
-      <div className="fixed inset-0 z-0 opacity-10 blur-sm grayscale brightness-50 pointer-events-none">
-        <Image
-          src="/zippattern.png"
-          alt="zipPattern Logo Background"
-          fill
-          style={{ objectFit: 'contain', width: '120%', height: 'auto', transform: 'translateX(-10%)' }}  //or 'contasin', transform: 'scale(1)', transformOrigin: 'center' }}
-          priority
-          
-        />
-      </div>
+    <div className="relative min-h-screen bg-transparent text-white flex flex-col justify-start px-6 py-16 text-center">
 
       <main className="relative z-10 w-full lg:max-w-7xl mx-auto px-6 flex flex-col items-center text-center min-h-screen py-40">
-        <section className="relative w-full h-screen flex flex-col items-center justify-center text-white text-center mb-12">
-          <Image
-            src="/zippattern.png"
-            alt="zipPattern Fullscreen Logo"
-            fill
-            style={{ objectFit: 'contain' }}
-            className="opacity-100 z-0"
-            priority
-          />
-          <div className="absolute z-10">
-            <h1 className="text-6xl font-bold tracking-wide uppercase">zipPattern</h1>
-            <p className="text-2xl text-gray-300 font-light mt-4">
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-white text-center mb-12 overflow-hidden">
+          {/* Grayscale wolf background */}
+          <div className="absolute top-0 left-0 w-full h-full z-0 opacity-30 blur-sm grayscale brightness-50 pointer-events-none">
+            <Image
+              src="/wolf-bg.png"
+              alt="AE-iT.OPS Wolf Background"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
+          {/* Foreground: zipPattern logo and tagline */}
+          <div className="absolute z-10 flex flex-col justify-center items-center">
+            <img
+              src="/zippattern.png"
+              alt="zipPattern Logo"
+              className="w-[20rem] h-[20rem] object-contain rounded-full mb-4 transition-all duration-500"
+            />
+            <h1 className="text-4xl font-serif font-bold transition-all duration-500">
+              zipPattern
+            </h1>
+            <p className="text-xl italic mt-2 transition-all duration-500 text-gray-300">
               Redefining outdated traditions with modern solutions.
             </p>
           </div>
