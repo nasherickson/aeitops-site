@@ -9,7 +9,7 @@ export default function WhoAmI() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-3 text-white">Built from the Ground Up</h2>
         <p className="mb-6 text-gray-200">
-          I didn’t inherit this path—I built it. No mentor, no map, no scripted origin story. Just relentless curiosity, problems that demanded answers, and the drive to create when nothing else worked.
+          If you were a fly on the wall while I worked, you’d see more than clean lines of code. You’d see sketches, notes, and a process that looks chaotic at first but always bends toward clarity. I don’t follow a script — I dismantle problems, test approaches, and rebuild until everything feels inevitable.
         </p>
         <StatCard
           title="Developer Profile"
@@ -25,7 +25,7 @@ export default function WhoAmI() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-3 text-white">Building with Purpose</h2>
         <p className="mb-6 text-gray-200">
-          Every project starts with friction—something broken, slow, or needlessly complicated. I create tools that challenge assumptions and prioritize clarity.
+          Every project begins with friction — the stubborn problem, the overlooked detail, the missing piece. I don’t chase perfect conditions. I thrive in the tension, finding clarity by shaping solutions that others don’t see. That’s where my best work comes from.
         </p>
         <StatCard
           title="Process Signals"
@@ -70,7 +70,7 @@ export default function WhoAmI() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-3 text-white">Relentless Iteration</h2>
         <p className="mb-6 text-gray-200">
-          My process is simple: build, test, refine, repeat. Not from uncertainty, but from a refusal to settle for less than what’s possible.
+          My workflow isn’t about indecision — it’s about relentless pursuit. Build, break, refine, repeat. I don’t settle for “good enough.” I push until the design and the code both feel inevitable, like they couldn’t exist any other way.
         </p>
         <StatCard
           title="Core Workflow"
@@ -98,7 +98,7 @@ export default function WhoAmI() {
       <section>
         <h2 className="text-2xl font-semibold mb-3 text-white">Let’s Build Something Real</h2>
         <p className="text-gray-200">
-          I’m not here for transactions—I’m here for impact. If you’re chasing an idea that refuses to let go, I’m ready to help make it real.
+          I’m not here for transactions — I’m here for transformation. If you’re chasing an idea that keeps you up at night, let’s tackle it together. I bring energy, adaptability, and fresh thinking — not to rewrite the rules, but to hopefully rewrite the standards.
         </p>
       </section>
     </div>

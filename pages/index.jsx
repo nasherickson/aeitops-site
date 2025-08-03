@@ -3,9 +3,14 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Playfair_Display } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 
+// initialize the font
+const playfair = Playfair_Display({ subsets: ['latin'] });
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,15 +22,17 @@ export default function Home() {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans relative">
-      <div className="fixed inset-0 z-0 opacity-10 blur-sm grayscale brightness-5 pointer-events-none">
-        <Image
-          src="/aeitops.png"
-          alt="aeitops Logo Background"
-          fill
-          style={{ objectFit: 'contain', transform: 'translateX(-10%)' }}
-          priority
-        />
-      </div>
+      {pathname !== '/ae-clear' && (
+        <div className="fixed inset-0 z-0 opacity-10 blur-sm grayscale brightness-5 pointer-events-none">
+          <Image
+            src="/aeitops.png"
+            alt="aeitops Logo Background"
+            fill
+            style={{ objectFit: 'contain', transform: 'translateX(-10%)' }}
+            priority
+          />
+        </div>
+      )}
 
       <header className="fixed top-0 left-0 w-full z-10 bg-transparent h-[30rem] flex flex-col justify-center items-center">
         <img
@@ -37,13 +44,13 @@ export default function Home() {
         />
         <h1
           className={`text-4xl font-serif font-bold transition-all duration-500 ${
-            scrolled ? 'blur-sm opacity-70 scale-95' : 'blur-0 opacity-100'
+            scrolled ? 'blur-sm opacity-70 scale-100' : 'blur-0 opacity-100'
           }`}
         >
           AE-iT.OPS
         </h1>
         <p
-          className={`text-xl italic mt-2 transition-all duration-500 ${
+          className={`${playfair.className} text-xl italic mt-2 transition-all duration-500 ${
             scrolled ? 'blur-sm opacity-70 scale-95' : 'blur-0 opacity-100'
           }`}
         >
@@ -52,17 +59,19 @@ export default function Home() {
       </header>
 
       <main className="relative z-10 pt-[32rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-        {['zipPattern', 'Llamora', 'Parley'].map((project) => (
+        {['zipPattern', 'Llamora', 'AE-Clear'].map((project) => (
           <Link href={`/${project.toLowerCase()}`} key={project}>
             <div className="p-4 rounded-lg transition text-center hover:scale-105 transform duration-300">
               <img
                 src={`/${project === 'Llamora' ? 'llamora' : project.toLowerCase()}.png`}
                 alt={`${project} preview`}
-                className="object-contain mx-auto rounded-xl shadow-lg w-52 h-40"
+                className={`object-contain mx-auto rounded-xl shadow-lg ${
+                  project === 'AE-Clear' ? 'w-72 h-56' : 'w-52 h-40'
+                }`}
               />
               <h2 className="text-2xl font-semibold mt-4">{project}</h2>
               <p className="text-sm text-gray-400">
-                Click to explore more about {project}.
+                More information about this project. {project}.
               </p>
             </div>
           </Link>
@@ -112,7 +121,7 @@ export default function Home() {
       <section className="relative z-10 mt-24 text-center max-w-3xl mx-auto px-6">
         <h2 className="text-3xl font-bold mb-4">Who Am I</h2>
         <p className="text-lg leading-relaxed mb-6">
-          Not what you want to hear — what you need to know. For the raw version of who I am and how I work, read this.
+          Not just your average dev. What to expect and my process.
         </p>
         <Link
           href="/whoami"
